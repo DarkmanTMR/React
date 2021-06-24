@@ -1,6 +1,7 @@
 import './App.css';
 import Users from "./components/Users/Users";
 import Menu from './components/menu/Menu';
+import Posts from "./components/Posts/Posts";
 
 
 export default function App() {
@@ -15,7 +16,7 @@ export default function App() {
         classes={ ['asd','qcc']}/>
 
 
-
+<Posts/>
 
     </div>
   );
