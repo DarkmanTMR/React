@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import User from '../User/User';
+
 export default function Users() {
 
 let [users, setUsers] = useState([]);
@@ -16,6 +17,7 @@ let [users, setUsers] = useState([]);
             {
                 users.map(user => <User item= {user}/>)
             }
+
         </div>
     );
     
