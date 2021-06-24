@@ -1,6 +1,7 @@
 
 import {useEffect, useState} from "react";
-
+import './Posts.css'
+import Post from '../Post/Post'
 export default function Posts(){
 
 
@@ -16,7 +17,7 @@ export default function Posts(){
     return(
         <div>
             {
-                posts.map(post => <li>{post.id} - {post.title}: <h4>{post.body}</h4></li>)
+                posts.map(post => <Post item={post}/>)
             }
         </div>
 
