@@ -7,7 +7,7 @@ export default function Post({item, tikFather}) {
         <div>
             {item.id} - {item.title} -
             <button onClick={
-                tikFather
+                () => tikFather(item.id)
             }>push the button</button>
 
         </div>

@@ -6,7 +6,7 @@ import Posts from "./components/posts/Posts";
 
 export default function App() {
 
-  let appTik = () => console.log('Yo');
+  let appTik = (id) => console.log(id);
   let [posts, setPosts] = useState([]) ;
 
   useEffect(() => {
