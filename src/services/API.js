@@ -9,4 +9,7 @@ let options = {
 
 
  const getPosts = () => axiosInstance('/posts');
- export {getPosts};
+ const getPost = (id) => axiosInstance('/posts/' + id);
+
+
+ export {getPosts, getPost};

@@ -1,12 +1,15 @@
 import {useEffect, useState} from "react";
-import {getPosts} from "./components/services/API";
+import {getPost, getPosts} from "./services/API";
 import Posts from "./components/posts/Posts";
 
 
 
 export default function App() {
 
-  let appTik = (id) => console.log(id);
+  let appTik = (id) => {
+
+  getPost(id).then(value => console.log(value));
+  };
   let [posts, setPosts] = useState([]) ;
 
   useEffect(() => {
