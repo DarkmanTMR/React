@@ -1,7 +1,7 @@
 
 
-export default function Post({item}) {
-    let tik = () => console.log('Yo');
+export default function Post({item, tikFather}) {
+    let tik = tikFather;
     return (
 
         <div>

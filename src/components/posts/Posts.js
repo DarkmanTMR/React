@@ -1,8 +1,8 @@
 import Post from "../post/Post";
 
-export default function Posts({items}) {
+export default function Posts({items, appTik}) {
 
-let tikFather = () => console.log('Yo')
+let tikFather = appTik;
 
     return(
         <div>

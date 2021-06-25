@@ -6,6 +6,7 @@ import Posts from "./components/posts/Posts";
 
 export default function App() {
 
+  let appTik = () => console.log('Yo');
   let [posts, setPosts] = useState([]) ;
 
   useEffect(() => {
@@ -13,7 +14,7 @@ export default function App() {
   }, []);
   return (
     <div>
-      <Posts items={posts}/>
+      <Posts items={posts} appTik={appTik}/>
     </div>
   );
 }
