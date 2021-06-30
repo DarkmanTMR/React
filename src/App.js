@@ -8,7 +8,11 @@ function reducer(state, action) {
     case 'ADD_USERS':
       return {...state, users: action.payload};
     case 'ADD_USER':
-      return {...state, user : action.payload};
+      return {...state, user: action.payload};
+      case 'ADD_POSTS':
+      return {...state, posts: action.payload};
+      case 'ADD_POST':
+      return {...state, post: action.payload};
     default :
       return {...state};
   }
@@ -25,14 +29,13 @@ export default  function App() {
   const appSelect = (id) => {
     getUser(id).then(value => dispatch({type:'ADD_USER', payload: value.data})); };
 
-// let [user, setUser] = useState(null);
-// let [users, setUsers] = useState([]);
-// let [post, setPost] = useState(null);
-// let [posts, setPosts] = useState([]) ;
 
-
-// let appTik = (id) => {  getPost(id).then(value => setPost(value.data));  };
-// useEffect(() => {getPosts().then(value => setPosts(value.data));  }, []);
+let {posts, post} = state;
+useEffect(() => {
+    getPosts().then(value => dispatch({type: 'ADD_POSTS', payload: value.data}));
+},[]);
+const appTik = (id) => {
+    getPost(id).then(value => dispatch({type: 'ADD_POST', payload: value.data}));  };
 
 
 
@@ -47,6 +50,12 @@ export default  function App() {
         user && <div><h2> {user.id} - {user.name} </h2></div>
       }
       <hr/>
+        <Posts items={posts} appTik={appTik}/>
+        <hr/>
+        {
+            post && <div><h2>{post.id} - {post.body}</h2></div>
+        }
+        <hr/>
     </div>
   );
 }
