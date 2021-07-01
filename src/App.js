@@ -1,7 +1,14 @@
-import {useEffect, useReducer, useState} from "react";
+import {useEffect, useReducer} from "react";
 import {getPost, getPosts, getUser, getUsers} from "./services/API";
 import Users from "./components/Users/Users";
 import Posts from "./components/Posts/Posts";
+
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from 'react-router-dom';
 
 function reducer(state, action) {
   switch (action.type) {
@@ -40,23 +47,25 @@ const appTik = (id) => {
 
 
 
-
-
   return (
-    <div >
-      <Users items={users} appSelect={appSelect}/>
-      <hr/>
-      {
-        user && <div><h2> {user.id} - {user.name} </h2></div>
-      }
-      <hr/>
-        <Posts items={posts} appTik={appTik}/>
-        <hr/>
-        {
-            post && <div><h2>{post.id} - {post.body}</h2></div>
-        }
-        <hr/>
-    </div>
+   <Router>
+       <div >
+           <Users/>
+          <ul>
+              <li>
+                  <Link to={'/Users'}>Users</Link>
+              </li>
+              <li>
+                  <Link to={'/Posts'}>Posts</Link>
+          </li>
+
+                <Route path={'/Users'} render={() => <Users/>}/>
+
+
+
+          </ul>
+       </div>
+   </Router>
   );
 }
 

@@ -1,8 +1,7 @@
-export default function User({item, select}) {
+export default function User({item}) {
     return(
         <div>
-            {item.id} - {item.name} <button onClick={() => select(item.id)}> select
-        </button>
+            {item.id} - {item.name}
         </div>
     );
     

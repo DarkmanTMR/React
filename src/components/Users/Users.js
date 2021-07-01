@@ -1,12 +1,12 @@
 import User from "../User/User";
 
-export default function Users({items, appSelect}) {
+export default function Users({items}) {
 
 
     return(
         <div>
             {
-                items.map((value) => <User key={value.id} item={value} select={appSelect}/>)
+               items.map(value => <User key={value.id} item={value}/>)
             }
         </div>
     );
