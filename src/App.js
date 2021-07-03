@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+
+import {
+  BrowserRouter as Router, Route, Link
+} from 'react-router-dom';
+import Users from "./components/users/Users";
+import Posts from "./components/posts/Posts";
+import Comments from "./components/comments/Comments";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router>
+        <div>
+
+               <br/>
+               <Link to={'/'}>Home</Link>
+               <br/>
+               <Link to={'/users'}>Users</Link>
+               <br/>
+               <Link to={'/posts'}>Posts</Link>
+               <br/>
+               <Link to={'/comments'}>Comments</Link>
+
+
+
+          <Route path={'/users'} render={(props) => <Users{...props}/>}/>
+            <Route path={'/posts'} render={() => <Posts/>}/>
+            <Route path={'/comments'} render={() => <Comments/>}/>
+        </div>
+      </Router>
   );
 }
 
