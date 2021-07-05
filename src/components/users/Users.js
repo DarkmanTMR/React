@@ -10,6 +10,9 @@ import {
 import UserInfo from "../user-info/UserInfo";
 import UserInfo2 from "../user-info2/UserInfo2";
 
+import Posts from "../Posts/Posts";
+
+
 
 export default function Users() {
 
@@ -17,6 +20,7 @@ export default function Users() {
     let [users, setUsers] = useState([]);
     useEffect(() => {
         getUsers().then(value => {
+            console.log(value.data)
             setUsers([...value.data]);
         });
     },[]);
@@ -28,7 +32,7 @@ export default function Users() {
             }
             <Switch>
                 {/*<Route path={'/users/:id'} component={UserInfo}/>*/}
-                <Route path={'/users/:id'} component={UserInfo2}/>
+                {/*<Route path={'/users/:id'} component={UserInfo2}/>*/}
             </Switch>
 
         </div>

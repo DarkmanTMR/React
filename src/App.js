@@ -14,8 +14,9 @@ function App() {
   <Link to={'/users'}>users page</Link>
        <Switch>
          <Route path={'/users'} component={Users}/>
-           <Route path={'/users/:id'} component={UserInfo}/>
-       </Switch>
+         {/*  <Route path={'/users/:id'} component={UserInfo}/>*/}
+
+                 </Switch>
     </div>
    </Router>
   );

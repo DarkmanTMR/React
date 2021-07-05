@@ -22,7 +22,7 @@ export default function UserInfo(props) {
     return(
         <div>
             {
-               JSON.stringify(user)
+
             }
 
         </div>
