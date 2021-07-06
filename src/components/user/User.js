@@ -18,8 +18,10 @@ export default function User({item}) {
     {/*                state: item*/}
     {/*            }*/}
 
-    {item.name} - <Link to={'/users/'+ item.id}> user's posts</Link>
-    <Route path={'/users/' + item.id} component={Posts}/>
+    {item.name} - <Link to={'/users/'+ item.id + '/posts'}> user's posts</Link>
+    <Route path={'/users/' + item.id +'/posts'}render={(props)=>{
+        return <Posts {...props} id={item.id}/>
+    }}/>
         </div>
     )
 

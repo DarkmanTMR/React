@@ -6,10 +6,10 @@ import {getPosts, getUsers} from "../../services/API";
 
 
 
-export default function Posts() {
+export default function Posts({id}) {
     let [posts, setPosts] = useState([]);
     useEffect(() => {
-        getPosts().then(value => {
+        getPosts(id).then(value => {
                        setPosts([...value.data]);
         });
     },[]);

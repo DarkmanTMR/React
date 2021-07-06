@@ -1,10 +1,10 @@
 
-export default function Post({item}) {
+export default function Post({post}) {
 
     return(
         <div>
 
-      {item.body}
+      {post.body}
 
         </div>
     );
