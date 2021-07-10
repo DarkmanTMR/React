@@ -1,10 +1,10 @@
 import {Link} from "react-router-dom";
 
-export default function Post({item:{id, title}, ln}) {
+export default function Post({item:{id, title}}) {
 
     return (
         <div>
-            {id} - {title}  {ln && <Link to={'/posts/'}></Link>}
+            {id} - {title}  {<Link to={'/posts'}/>}
         </div>
     );
 }

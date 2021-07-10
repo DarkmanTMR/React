@@ -1,6 +1,6 @@
 import {BrowserRouter as Router,Switch,Route,Link} from 'react-router-dom';
 import Counter from "./components/counter/Counter";
-import Posts from "./components/counter/posts/Posts";
+import Posts from "./components/posts/Posts";
 
 
 

@@ -1,7 +1,7 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
-import {getPosts} from "../../services/Posts.service";
-import Post from "../../post/Post";
+import {getPosts} from "../services/Posts.service";
+import Post from "../post/Post";
 
 export default function Posts() {
     const posts = useSelector(({posts}) => posts);
@@ -9,7 +9,7 @@ export default function Posts() {
 
 
     useEffect(() => {
-        if(posts.isEmpty) {
+         {
             getPosts().then(value => dispatch({type: 'ADD_POSTS',payload: value.data}))
         }
     },[]);
