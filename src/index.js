@@ -3,12 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
 import {createStore} from "redux";
 import {Provider} from "react-redux";
+
 
 const initialState = {
         counter: {
         value: 0
+    },
+    posts: {
+           value: [],
+            isEmpty: true
     }
 }
 
@@ -36,10 +42,30 @@ const reducer = (state = initialState, action) => {
             return{
                 ...state,
                 counter: {
-                    value: state.counter.value = 0
+                    value: 0
                 }
             }
         }
+
+        case 'INC_CAST': {
+            return{
+                ...state,
+                counter: {
+                    value: state.counter.value + +(action.payload)
+                }
+            }
+        }
+
+        case 'ADD_POSTS': {
+            return {
+                ...state,
+                posts: {
+                    value: action.payload,
+                    isEmpty: false
+                }
+            }
+        }
+
         default:
             return state;
     }

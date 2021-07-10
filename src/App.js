@@ -1,49 +1,28 @@
-
-import {useDispatch, useSelector} from 'react-redux'
-
-      const NestedChild = () => {
-        const counter = useSelector(({counter: {value}}) => value)
+import {BrowserRouter as Router,Switch,Route,Link} from 'react-router-dom';
+import Counter from "./components/counter/Counter";
+import Posts from "./components/counter/posts/Posts";
 
 
-        return (
-            <header className="App-header">
-              <h1>{counter}</h1>
 
 
-            </header>
-        )
-      }
 
-function App() {
-    const dispatch = useDispatch();
 
+export default function App() {
     return (
-        <div className="App">
-            <button
-                onClick={() => {
-                    dispatch({type: 'INC'})
-                }}
-            >
-                inc
-            </button>
+        <Router>
+            <div>
+                <Link to={'/counter'}>counter</Link>
+                <br/>
+                <Link to={'/posts'}>posts</Link>
+            </div>
 
-            <button
-                onClick={() => {
-                    dispatch({type: 'DEC'})
-                }}
-            >
-                dec
-            </button>
-            <button
-                onClick={() => {
-                    dispatch({type: 'RESET'})
-                }}
-            >
-                reset
-            </button>
-            <NestedChild />
-        </div>
+            <Switch>
+                <Route path={'/counter'} component={Counter}/>
+                <Route path={'/posts'} component={Posts}/>
+            </Switch>
+        </Router>
+
+
     );
 }
 
-export default App;
