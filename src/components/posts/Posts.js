@@ -1,6 +1,6 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
-import {getPosts} from "../services/Posts.service";
+import {getPosts} from "../../services/Posts.service";
 import Post from "../post/Post";
 
 export default function Posts() {
