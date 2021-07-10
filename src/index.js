@@ -60,8 +60,7 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 posts: {
                     value: action.payload,
-                    isEmpty: false
-                }
+                 }
             }
         }
 
